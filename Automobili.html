@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto in vendita</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        img{
+            display: none;
+            width: 500px;
+        }
+
+        #result{
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+    </style>
+    <script>
+        function scegli(){
+            let scelta = document.getElementById("auto").value;
+            if (scelta == "Duster"){
+                document.getElementById("Duster").style.display="block";
+                document.getElementById("Niro").style.display="none";
+                document.getElementById("Tucson").style.display="none";
+                document.getElementById("Urus").style.display="none";
+                document.getElementById("Cayenne").style.display="none";
+                let nodo = document.getElementById("result");
+                nodo.textContent = "Il prezzo della Dacia Duster è 25000€";
+            } else if (scelta == "Niro"){
+                document.getElementById("Duster").style.display="none";
+                document.getElementById("Niro").style.display="block";
+                document.getElementById("Tucson").style.display="none";
+                document.getElementById("Urus").style.display="none";
+                document.getElementById("Cayenne").style.display="none";
+                let nodo = document.getElementById("result");
+                nodo.textContent = "Il prezzo della Kia Niro è 31000€";
+            } else if (scelta == "Tucson"){
+                document.getElementById("Duster").style.display="none";
+                document.getElementById("Niro").style.display="none";
+                document.getElementById("Tucson").style.display="block";
+                document.getElementById("Urus").style.display="none";
+                document.getElementById("Cayenne").style.display="none";
+                let nodo = document.getElementById("result");
+                nodo.textContent = "Il prezzo della Hyundai Tucson è 40000€";
+            } else if (scelta == "Urus"){
+                document.getElementById("Duster").style.display="none";
+                document.getElementById("Niro").style.display="none";
+                document.getElementById("Tucson").style.display="none";
+                document.getElementById("Urus").style.display="block";
+                document.getElementById("Cayenne").style.display="none";
+                let nodo = document.getElementById("result");
+                nodo.textContent = "Il prezzo della Lamborghini Urus è 245000€";
+            } else if (scelta == "Cayenne"){
+                document.getElementById("Duster").style.display="none";
+                document.getElementById("Niro").style.display="none";
+                document.getElementById("Tucson").style.display="none";
+                document.getElementById("Urus").style.display="none";
+                document.getElementById("Cayenne").style.display="block";
+                let nodo = document.getElementById("result");
+                nodo.textContent = "Il prezzo della Porsche Cayenne è 105000€";
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Auto in vendita</h1>
+    <h3>Scegli la tua auto e scoprine il prezzo!</h3>
+    <select id="auto">
+        <option value="Duster">Dacia Duster</option>
+        <option value="Niro">Kia Niro</option>
+        <option value="Tucson">Hyundai Tucson</option>
+        <option value="Urus">Lamborghini Urus</option>
+        <option value="Cayenne">Porsche Cayenne</option>
+    </select>
+    <button onclick="scegli()">SCEGLI!</button>
+    <hr>
+    <hr>
+    <div id="result">    </div>
+    <br>
+    <img src="duster.jpg" id="Duster">
+    <img src="niro.jpg" id="Niro">
+    <img src="tucson.jpg" id="Tucson">
+    <img src="urus.jpg" id="Urus">
+    <img src="cayenne.jpg" id="Cayenne">
+</body>
+</html>
